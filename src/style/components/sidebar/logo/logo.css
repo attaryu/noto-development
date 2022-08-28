@@ -1,0 +1,10 @@
+.logo {
+   width: 100%;
+   height: 14vh;
+   display: grid;
+   place-items: center;
+}
+
+.logo__svg {
+   width: 55%;
+}

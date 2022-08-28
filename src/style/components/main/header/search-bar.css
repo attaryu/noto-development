@@ -1,0 +1,22 @@
+.search-bar {
+	width: 50%;
+	height: 4.5vh;
+	padding-inline: 10px;
+	display: flex;
+	align-items: center;
+	border: 1px solid black;
+	border-radius: 100px;
+}
+
+.search-bar__icon {
+	padding-right: 10px;
+	font-size: 0.9rem;
+	transform: translateY(2px);
+}
+
+.search-bar__input {
+	all: unset;
+	width: 100%;
+	font-family: "Poppins Medium";
+	font-size: 0.8rem;
+}

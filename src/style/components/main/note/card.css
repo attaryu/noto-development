@@ -1,0 +1,70 @@
+.card {
+	width: 17.5vw;
+	height: 300px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+	transition: 0.3s ease 0.1s;
+}
+
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+	transform: translateY(-5px) scale(1.02);
+}
+
+.card__title {
+	position: relative;
+	font-family: "Poppins Bold";
+	white-space: nowrap;
+	line-height: 25px;
+	overflow: hidden;
+}
+
+.card__date {
+	margin-block-end: 15px;
+	position: relative;
+	font-size: 0.6rem;
+	font-family: "Poppins SemiBold";
+	line-height: 25px;
+	color: rgb(150, 150, 150);
+}
+
+.card__text {
+	height: calc(25px * 6);
+	position: relative;
+	font-size: 0.8rem;
+	line-height: 25px;
+	overflow: hidden;
+}
+
+.card__title::after,
+.card__text::after,
+.card__date::after {
+	content: "";
+	width: 50%;
+	height: 25px;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(90deg, transparent, white);
+}
+
+.card__button-container {
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.card__button {
+	all: unset;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+.card__button:hover {
+	transform: scale(1.1);
+}

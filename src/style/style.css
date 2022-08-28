@@ -1,0 +1,24 @@
+@import "./base/font.css";
+@import "./base/base.css";
+@import "./base/root.css";
+
+@import "./components/sidebar/sidebar.css";
+@import "./components/sidebar/logo/logo.css";
+@import "./components/sidebar/navigation/navigation.css";
+
+@import "./components/main/main.css";
+@import "./components/main/header/header.css";
+@import "./components/main/header/search-bar.css";
+
+@import "./components/main/note/note.css";
+@import "./components/main/note/card.css";
+
+@import "./components/addnote/add-note.css";
+
+@import "./components/formnote/form-note.css";
+
+@import "./components/nonote/no-note.css";
+
+@import "./components/editnote/edit-note.css";
+
+@import "./components/notif/notif.css";
