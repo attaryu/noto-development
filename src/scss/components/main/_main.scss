@@ -1,0 +1,7 @@
+@use "../../utils/mixin" as mixin;
+
+.main {
+	@include mixin.dimension(100%, 100vh);
+	@include mixin.flex(false, false, column);
+	background-color: rgb(225, 225, 225);
+}

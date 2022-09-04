@@ -1,8 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import "./style/style.css";
-import "./icon/css/uicons-regular-straight.css";
+import "./scss/style.scss";
 
 import Container from "./components/Container";
 

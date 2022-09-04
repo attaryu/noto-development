@@ -1,0 +1,29 @@
+@use "../utils/mixin" as mixin;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+}
+
+:root {
+	--base: #f6f4f4;
+	--primary: #5b9279;
+	--secondary: #8fcb9b;
+	--accent: #131313;
+
+	font-size: 19px;
+
+	@media screen and (max-width: 1050px) {
+		font-size: 17.5px;
+	}
+
+	@media screen and (max-width: 600px) {
+		font-size: 15px;
+	}
+}
+
+body {
+	@include mixin.font(1rem, 400);
+}

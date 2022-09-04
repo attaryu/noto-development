@@ -1,0 +1,23 @@
+@use "./base/_base.scss";
+@use "./base/_root.scss";
+
+@use "./components/sidebar/_sidebar.scss";
+@use "./components/sidebar/logo/_logo.scss";
+@use "./components/sidebar/navigation/_navigation.scss";
+
+@use "./components/main/_main.scss";
+@use "./components/main/header/_header.scss";
+@use "./components/main/header/_search-bar.scss";
+
+@use "./components/main/note/_note.scss";
+@use "./components/main/note/_card.scss";
+
+@use "./components/addnote/_add-note.scss";
+
+@use "./components/formnote/_form-note.scss";
+
+@use "./components/nonote/_no-note.scss";
+
+@use "./components/editnote/_edit-note.scss";
+
+@use "./components/notif/_notif.scss";

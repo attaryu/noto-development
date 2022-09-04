@@ -1,0 +1,48 @@
+@use "../../../utils/mixin" as mixin;
+
+.navigation {
+	width: 100%;
+	margin-top: 7vh;
+	@include mixin.flex(false, false, column);
+
+	@media screen and (max-width: 1050px) {
+		margin: 0;
+	}
+
+	&__list-container {
+		width: 100%;
+	}
+
+	&__list-item {
+		width: 100%;
+		margin-block: 2vh;
+		padding: 1.5vh 12%;
+		@include mixin.flex(false, center);
+		color: white;
+		font-weight: 500;
+		cursor: pointer;
+		transition: 0.4s ease;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+		@media screen and (max-width: 1050px) {
+			font-size: 1.1rem;
+		}
+
+		&:hover {
+			background-color: #51856d;
+		}
+
+		&--active {
+			background-color: #426f5b;
+			transform: translateX(10px);
+
+			&:hover {
+				background-color: #426f5b;
+			}
+		}
+	}
+
+	&__icon {
+		padding-right: 15px;
+	}
+}

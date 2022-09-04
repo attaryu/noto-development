@@ -1,0 +1,22 @@
+@use "./mixin" as mixin;
+
+%button {
+	all: unset;
+	@include mixin.dimension(100px, 35px);
+	@include mixin.font(0.9rem, 600);
+	text-align: center;
+	transition: 0.3s ease;
+	cursor: pointer;
+}
+
+%fade {
+	content: "";
+	@include mixin.dimension(50%, 25px);
+	@include mixin.positioning(absolute, false, 0, 0);
+	display: block;
+	background: linear-gradient(90deg, transparent, white);
+
+	@media screen and (max-width: 411px) {
+		line-height: 20px;
+	}
+}

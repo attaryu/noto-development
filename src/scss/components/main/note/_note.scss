@@ -1,0 +1,32 @@
+@use "../../../utils/mixin" as mixin;
+
+.note {
+	width: 100%;
+	padding: 2vmax;
+	position: relative;
+	@include mixin.flex(false, false, false, wrap);
+	gap: 30px;
+	overflow: auto;
+
+	@media screen and (max-width: 1050px) {
+		gap: 25px;
+	}
+
+	@media screen and (max-width: 600px) {
+		@include mixin.flex(flex-start, false, column, nowrap);
+		padding-bottom: 100px;
+		gap: 20px;
+	}
+}
+
+.note::after {
+	content: "";
+	@include mixin.dimension(83.3%, 5vh);
+	display: block;
+	@include mixin.positioning(fixed, false, 0, 0, false);
+	background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+
+	@media screen and (max-width: 1050px) {
+		width: 100%;
+	}
+}

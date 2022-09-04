@@ -1,0 +1,97 @@
+@use "../../../utils/mixin" as mixin;
+
+.header {
+	@include mixin.dimension(100%, 9vh);
+	padding: 30px;
+	position: relative;
+	@include mixin.flex(center, center);
+	background-color: white;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+	@media screen and (max-width: 1050px) {
+		@include mixin.dimension(100%, 7vh);
+		justify-content: space-between;
+	}
+
+	@media screen and (max-width: 600px) {
+		padding: 20px;
+	}
+
+	&__button-sidebar {
+		all: unset;
+		display: none;
+		transition: 0.4s ease;
+
+		@media screen and (max-width: 1050px) {
+			@include mixin.dimension(45px, 45px);
+			@include mixin.flex(space-evenly, center, column);
+			z-index: 10;
+		}
+
+		@media screen and (max-width: 600px) {
+			@include mixin.dimension(35px, 35px);
+		}
+
+		&--active {
+			transform: translateX(30vw);
+
+			@media screen and (max-width: 600px) {
+				transform: translateX(42vw);
+			}
+		}
+	}
+
+	&__span-icon {
+		@include mixin.dimension(90%, 0.7vh);
+		display: none;
+		background-color: black;
+		transition: 0.4s ease;
+
+		@media screen and (max-width: 1050px) {
+			display: block;
+		}
+
+		@media screen and (max-width: 600px) {
+			height: 0.6vh;
+		}
+
+		&--active {
+			&:nth-child(1) {
+				transform: translateY(13px) rotate(225deg);
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				transform: translateY(-13px) rotate(-225deg);
+			}
+
+			@media screen and (max-width: 600px) {
+				&:nth-child(1) {
+					transform: translateY(10.5px) rotate(225deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: translateY(-10.5px) rotate(-225deg);
+				}
+			}
+		}
+	}
+
+	&__wrapper {
+		width: 100%;
+		@include mixin.flex(center, center);
+
+		@media screen and (max-width: 1050px) {
+			width: 80%;
+			justify-content: flex-end;
+		}
+	}
+}

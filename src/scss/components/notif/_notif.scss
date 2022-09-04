@@ -1,0 +1,24 @@
+@use "../../utils/mixin" as mixin;
+
+.pop-up-notif {
+	@include mixin.positioning(fixed, false, false, -10vh, 50vw);
+	padding: 10px 20px;
+	@include mixin.grid(center, center);
+	background-color: var(--accent);
+	border-radius: 5px;
+	transform: translateX(-50%);
+	transition: 0.4s ease;
+
+	&--direction {
+		bottom: 15px;
+
+		@media screen and (max-width: 1050px) {
+			bottom: 25px;
+		}
+	}
+
+	&__text {
+		color: white;
+		font-size: 0.9rem;
+	}
+}

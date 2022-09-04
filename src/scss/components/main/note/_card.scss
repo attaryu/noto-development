@@ -1,0 +1,89 @@
+@use "../../../utils/mixin" as mixin;
+@use "../../../utils/inheritance";
+
+.card {
+	width: 17.5vw;
+	padding: 20px;
+	background-color: white;
+	border-radius: 10px;
+	transition: 0.3s ease 0.1s;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+	@media screen and (max-width: 1050px) {
+		width: 29.3vw;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 100%;
+	}
+
+	&:hover {
+		transform: translateY(-5px) scale(1.02);
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+	}
+
+	&__title {
+		position: relative;
+		@include mixin.font(false, 700, 25px);
+		white-space: nowrap;
+		overflow: hidden;
+
+		@media screen and (max-width: 600px) {
+			line-height: 20px;
+		}
+
+		&::after {
+			@extend %fade;
+		}
+	}
+
+	&__date {
+		margin-block-end: 15px;
+		position: relative;
+		@include mixin.font(0.6rem, 600, 25px);
+		color: rgb(150, 150, 150);
+
+		@media screen and (max-width: 600px) {
+			margin-block: -3px 5px;
+			line-weight: 20px;
+		}
+
+		&::after {
+			@extend %fade;
+		}
+	}
+
+	&__text {
+		height: calc(25px * 6);
+		position: relative;
+		@include mixin.font(0.8rem, false, 25px);
+		overflow: hidden;
+
+		@media screen and (max-width: 600px) {
+			height: calc(20px * 3);
+			line-height: 20px;
+		}
+
+		&::after {
+			@extend %fade;
+		}
+	}
+
+	&__button-container {
+		margin-top: 30px;
+		@include mixin.flex(flex-end);
+	}
+
+	&__button {
+		all: unset;
+		margin-left: 35px;
+		cursor: pointer;
+		transition: 0.2s ease;
+		font-size: 1.2rem;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
