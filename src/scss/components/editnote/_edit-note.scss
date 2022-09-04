@@ -1,0 +1,14 @@
+@use "../../utils/mixin" as mixin;
+
+.bg-form-edit {
+	@include mixin.dimension(100%, 100vh);
+	@include mixin.positioning(fixed, 0);
+	display: none;
+	place-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+}
+
+.bg-form-edit--active {
+	display: grid;
+}

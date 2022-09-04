@@ -1,0 +1,22 @@
+@use "../../utils/mixin" as mixin;
+
+.sidebar {
+	@include mixin.flex(false, false, column);
+	background-color: var(--primary);
+	transition: 0.4s ease;
+
+	@media screen and (max-width: 1050px) {
+		@include mixin.dimension(30%, 100vh);
+		@include mixin.positioning(fixed, false, false, false, -30%);
+		z-index: 1;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 45%;
+		left: -45%;
+	}
+
+	&--active {
+		left: 0;
+	}
+}

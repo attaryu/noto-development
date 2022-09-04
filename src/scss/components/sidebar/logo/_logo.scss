@@ -1,0 +1,14 @@
+@use "../../../utils/mixin" as mixin;
+
+.logo {
+	@include mixin.dimension(100%, 14vh);
+	@include mixin.grid(false, false, center);
+
+	@media screen and (max-width: 600px) {
+		margin-top: 30px;
+	}
+
+	&__svg {
+		width: 55%;
+	}
+}

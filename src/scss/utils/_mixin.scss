@@ -1,0 +1,97 @@
+@mixin flex($justify: false, $align: false, $direction: false, $wrap: false) {
+	display: flex;
+
+	@if $justify {
+		justify-content: $justify;
+	}
+
+	@if $align {
+		align-items: $align;
+	}
+
+	@if $direction {
+		flex-direction: $direction;
+	}
+
+	@if $wrap {
+		flex-wrap: $wrap;
+	}
+}
+
+@mixin grid($justify: false, $align: false, $place-items: false) {
+	display: grid;
+
+	@if $justify {
+		justify-content: $justify;
+	}
+
+	@if $align {
+		align-items: $align;
+	}
+
+	@if $place-items {
+		place-items: $place-items;
+	}
+}
+
+@mixin positioning(
+	$position: false,
+	$top: false,
+	$right: false,
+	$bottom: false,
+	$left: false
+) {
+	position: $position;
+
+	@if $top {
+		top: $top;
+	}
+
+	@if $right {
+		right: $right;
+	}
+
+	@if $bottom {
+		bottom: $bottom;
+	}
+
+	@if $left {
+		left: $left;
+	}
+}
+
+@mixin font($size: false, $weight: false, $line: false) {
+	font-family: "Poppins", sans-serif;
+
+	@if $size {
+		font-size: $size;
+	}
+
+	@if $weight {
+		font-weight: $weight;
+	}
+
+	@if $line {
+		line-height: $line;
+	}
+}
+
+@mixin dimension($width: false, $height: false) {
+	@if $width {
+		width: $width;
+	}
+
+	@if $height {
+		height: $height;
+	}
+}
+
+@mixin coloring($color, $bgcolor) {
+	@if $color {
+		color: $color;
+	}
+
+	@if $bgcolor {
+		background-color: $bgcolor;
+	}
+}

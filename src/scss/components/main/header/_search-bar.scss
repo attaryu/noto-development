@@ -1,0 +1,35 @@
+@use "../../../utils/mixin" as mixin;
+
+.search-bar {
+	@include mixin.dimension(50%, 5vh);
+	padding-inline: 15px;
+	@include mixin.flex(false, center);
+	border: 1px solid black;
+	border-radius: 100px;
+	transition: 0.4s ease;
+
+	@media screen and (max-width: 1050px) {
+		height: 3.5vh;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 60%;
+		padding-inline: 10px;
+
+		&--width {
+			width: 45%;
+		}
+	}
+
+	&__icon {
+		padding-right: 10px;
+		font-size: 0.9rem;
+		transform: translateY(2px);
+	}
+
+	&__input {
+		all: unset;
+		width: 100%;
+		@include mixin.font(0.8rem, 500);
+	}
+}

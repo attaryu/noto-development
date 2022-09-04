@@ -1,0 +1,57 @@
+@use "../../utils/mixin" as mixin;
+
+.add-note {
+	padding: 10px;
+	@include mixin.positioning(fixed, false, 10px, 10px);
+	@include mixin.flex(space-between, center);
+
+	@media screen and (max-width: 1050px) {
+		@include mixin.positioning(false, false, 15px, 15px);
+	}
+
+	@media screen and (max-width: 600px) {
+		@include mixin.positioning(false, false, 10px, 10px);
+	}
+
+	&__button {
+		all: unset;
+		@include mixin.dimension(65px, 65px);
+		margin-left: auto;
+		position: relative;
+		@include mixin.flex(center, center);
+		background-color: var(--accent);
+		border-radius: 100px;
+		transition: 0.3s ease;
+		cursor: pointer;
+
+		@media screen and (max-width: 1050px) {
+			@include mixin.dimension(60px, 60px);
+		}
+
+		@media screen and (max-width: 600px) {
+			@include mixin.dimension(50px, 50px);
+		}
+
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&__icon {
+		@include mixin.dimension(25px, 4.5px);
+		position: absolute;
+		background-color: white;
+
+		@media screen and (max-width: 1050px) {
+			@include mixin.dimension(25px, 4px);
+		}
+
+		@media screen and (max-width: 600px) {
+			@include mixin.dimension(20px, 3.5px);
+		}
+
+		&:nth-child(2) {
+			transform: rotate(90deg);
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 import Sidebar from "./Sidebar";
 import Header from "./Header";
@@ -9,6 +10,7 @@ import EditNote from "./EditNote";
 import PopUpNotif from "./PopUpNotif";
 
 import notif from "../utils/notif";
+import { store, getItem } from "../restore-data";
 
 export default class Container extends React.Component {
 	constructor(props) {
@@ -18,24 +20,24 @@ export default class Container extends React.Component {
 			data: [
 				{
 					id: 1981038154679,
-					title: "Babel",
-					body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
+					title: "Archived",
+					body: "Disini adalah tempat arsip catatan anda",
 					archived: true,
-					createdAt: "08 Aug 2022, 5:46 am",
+					createdAt: moment().format("DD MMM YYYY, h:mm a"),
 				},
 				{
 					id: 2675335065968,
-					title: "Node JS",
-					body: "Node.js adalah runtime environment untuk JavaScript yang bersifat open-source dan cross-platform. Dengan Node.js kita dapat menjalankan kode JavaScript di mana pun, tidak hanya terbatas pada lingkungan browser.",
+					title: "Nōto",
+					body: "Nōto adalah aplikasi catatan berbasis web yang menyimpan catatan anda ke dalam cache browser",
 					archived: false,
-					createdAt: "09 Aug 2022, 5:46 am",
+					createdAt: moment().format("DD MMM YYYY, h:mm a"),
 				},
 				{
 					id: 213896423748,
-					title: "Express JS",
-					body: "Express.js adalah framework web app untuk Node.js yang ditulis dengan bahasa pemrograman JavaScript. Framework open source ini dibuat oleh TJ Holowaychuk pada tahun 2010 lalu Express.js adalah framework back end. Artinya, ia bertanggung jawab untuk mengatur fungsionalitas website, seperti pengelolaan routing dan session, permintaan HTTP, penanganan error, serta pertukaran data di server",
+					title: "Notabene",
+					body: "Kamu mulai menambah catatan di page main",
 					archived: false,
-					createdAt: "10 Aug 2022, 6:11 am",
+					createdAt: moment().format("DD MMM YYYY, h:mm a"),
 				},
 			],
 			temporary: [],
@@ -63,6 +65,10 @@ export default class Container extends React.Component {
 			};
 		});
 		notif("Added note");
+
+		setTimeout(() => {
+			store(this.state.data);
+		}, 0);
 	}
 
 	changeList(mode) {
@@ -130,6 +136,10 @@ export default class Container extends React.Component {
 				}),
 			};
 		});
+
+		setTimeout(() => {
+			store(this.state.data);
+		}, 0);
 	}
 
 	deleteNote(event) {
@@ -140,6 +150,10 @@ export default class Container extends React.Component {
 			};
 		});
 		notif("Note deleted");
+
+		setTimeout(() => {
+			store(this.state.data);
+		}, 0);
 	}
 
 	openEditNote(event) {
@@ -196,6 +210,22 @@ export default class Container extends React.Component {
 			};
 		});
 		notif("Note edited");
+
+		setTimeout(() => {
+			store(this.state.data);
+		}, 0);
+	}
+
+	componentDidMount() {
+		if (getItem() === null || getItem() === undefined) {
+			store(this.state.data);
+		} else {
+			this.setState((prev) => {
+				return {
+					data: [...getItem()],
+				};
+			});
+		}
 	}
 
 	render() {
